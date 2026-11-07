@@ -10,20 +10,25 @@ app.get("/",(req,res)=>{
 })
 
 app.post("/api/test",async(req,res)=>{
+    try{
     const{method,url}=req.body;
     if(!method||!url){
         return res.status(400).json({
             message:"Both Method and Url are required"
         })
     }
-    console.log(method);
-    console.log(url);
     const response=await fetch(url,{
         method:method
     })
     const data=await response.json();
-    res.status(200).json({
-        message:"YOYO",
+    res.status(response.status).json({
+        message:"external api fetched",
         data:data
     })
+}catch(err){
+    console.log(err);
+    res.status(500).json({
+        message:"failed to fetch external api"
+    })
+}
 })
