@@ -1,24 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MINI API TESTER</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="request">
-            <h1 id="h1">Request</h1>
-            <select id="drop-down">
-                <option>GET</option>
-                <option>POST</option>
-                <option>DELETE</option>
-                <option>POST</option>
-                <option>PATCH</option>
-            </select>
-            <input type="text" placeholder="Enter API URL..." >
-            <button>Send</button>
+      <div class="request">
+        <h1 id="h1">Request</h1>
+        <select id="drop-down">
+          <option>GET</option>
+          <option>POST</option>
+          <option>DELETE</option>
+          <option>POST</option>
+          <option>PATCH</option>
+        </select>
+        <input type="text" placeholder="Enter API URL..." />
+        <button>Send</button>
+      </div>
+      <div class="req-config">
+        <h1 id="h2">Request Configuration</h1>
+        <button id="headers">Headers</button>
+        <button id="body">Body</button>
+        <div id="headers-editor">
+          <h3>Request headers</h3>
+          <div class="header-row">
+            <input type="text" placeholder="key" />
+            <input type="text" placeholder="value" />
+          </div>
+          <button id="add-header">+Add Header</button>
         </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
