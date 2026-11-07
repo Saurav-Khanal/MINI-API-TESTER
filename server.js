@@ -11,14 +11,15 @@ app.get("/",(req,res)=>{
 
 app.post("/api/test",async(req,res)=>{
     try{
-    const{method,url}=req.body;
+    const{method,url,headers}=req.body;
     if(!method||!url){
         return res.status(400).json({
             message:"Both Method and Url are required"
         })
     }
     const response=await fetch(url,{
-        method:method
+        method:method,
+        headers:headers
     })
     const data=await response.json();
     res.status(response.status).json({
