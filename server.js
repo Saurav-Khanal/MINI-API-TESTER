@@ -4,7 +4,7 @@ app.use(express.json());
 app.listen(3000, () => {
   console.log("Api is running on local host 3000");
 });
-
+app.use(express.static("public"));
 app.get("/", (req, res) => {
   res.send("Hey your backend is running yooo!!");
 });
