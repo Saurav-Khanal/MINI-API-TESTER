@@ -1,8 +1,8 @@
-
 const addHeader = document.querySelector("#add-header");
 const headersEditor = document.querySelector("#headers-editor");
 let sendBtn = document.querySelector("#send");
 let textArea = document.querySelector("#request-body");
+const responseOutput = document.querySelector(".response-output");
 addHeader.addEventListener("click", () => {
   let div = document.createElement("div");
   div.className = "header-row";
@@ -45,10 +45,13 @@ sendBtn.addEventListener("click", () => {
     headers: {
       "Content-Type": "application/json",
     },
-    body:JSON.stringify(requestConfig),
-  }).then((response)=>{
-   return response.json();
-  }).then((data)=>{
-    console.log(data);
+    body: JSON.stringify(requestConfig),
   })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+      responseOutput.textContent = JSON.stringify(data, null, 2);
+    });
 });
