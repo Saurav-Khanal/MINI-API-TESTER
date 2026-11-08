@@ -29,7 +29,13 @@ sendBtn.addEventListener("click", () => {
     }
   }
   let textAreaValue = textArea.value;
-  let textAreaObject = textAreaValue.trim() ? JSON.parse(textAreaValue) : {};
+  let textAreaObject
+  try{
+    textAreaObject=textAreaValue.trim() ? JSON.parse(textAreaValue) : {};
+  }catch(err){
+    alert("Invalid JSON body. Please check your JSON syntax.");
+    return;
+  }
   let selectValue = document.querySelector("#drop-down").value;
   let urlValue = document.querySelector("#request-url").value.trim();
   let requestConfig = {
