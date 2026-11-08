@@ -48,6 +48,8 @@ sendBtn.addEventListener("click", () => {
     body: JSON.stringify(requestConfig),
   })
     .then((response) => {
+      const status = document.querySelector("#status");
+      status.textContent = `${response.status} ${response.statusText}`;
       return response.json();
     })
     .then((data) => {

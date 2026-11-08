@@ -22,11 +22,12 @@ app.post("/api/test", async (req, res) => {
       method: method,
       headers:{
         ...headers,
-        "Content-type":"application/json",
       },
       body:method==="GET" ? undefined:JSON.stringify(body)
     });
+    console.log("Outgoing body:", JSON.stringify(body));
     const data = await response.json();
+    console.log(data);
     res.status(response.status).json({
       message: "external api fetched",
       data: data,
