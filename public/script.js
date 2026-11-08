@@ -27,8 +27,16 @@ sendBtn.addEventListener("click", () => {
       headers[key] = value;
     }
   }
-  console.log(headers);
   let textAreaValue=textArea.value;
-  let textAreaObject=JSON.parse(textAreaValue);
-  console.log(textAreaObject);
+  let textAreaObject=textAreaValue.trim()?JSON.parse(textAreaValue):{};
+  let selectValue=document.querySelector("#drop-down").value;
+  let urlValue=document.querySelector("#request-url").value.trim();
+  let requestConfig={
+    method:selectValue,
+    url:urlValue,
+    headers:headers,
+    body:textAreaObject
+  }
+  console.log(urlValue);
+  console.log(requestConfig);
 });
