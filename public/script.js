@@ -1,6 +1,7 @@
 const addHeader = document.querySelector("#add-header");
 const headersEditor = document.querySelector("#headers-editor");
 let sendBtn = document.querySelector("#send");
+let textArea=document.querySelector("#request-body");
 addHeader.addEventListener("click", () => {
   let div = document.createElement("div");
   div.className = "header-row";
@@ -27,4 +28,7 @@ sendBtn.addEventListener("click", () => {
     }
   }
   console.log(headers);
+  let textAreaValue=textArea.value;
+  let textAreaObject=JSON.parse(textAreaValue);
+  console.log(textAreaObject);
 });
