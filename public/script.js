@@ -29,10 +29,10 @@ sendBtn.addEventListener("click", () => {
     }
   }
   let textAreaValue = textArea.value;
-  let textAreaObject
-  try{
-    textAreaObject=textAreaValue.trim() ? JSON.parse(textAreaValue) : {};
-  }catch(err){
+  let textAreaObject;
+  try {
+    textAreaObject = textAreaValue.trim() ? JSON.parse(textAreaValue) : {};
+  } catch (err) {
     alert("Invalid JSON body. Please check your JSON syntax.");
     return;
   }
@@ -61,5 +61,9 @@ sendBtn.addEventListener("click", () => {
     .then((data) => {
       console.log(data);
       responseOutput.textContent = JSON.stringify(data, null, 2);
+    })
+    .catch((err) => {
+      console.log(err);
+      alert("Network error. Please check your URL or connection.");
     });
 });
