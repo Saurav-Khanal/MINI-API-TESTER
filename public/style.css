@@ -14,7 +14,7 @@ body{
 }
 
 .container{
-    height: 400px;
+    height: 600px;
     width: 500px;
     background-color: rgb(84, 85, 85);
     display: flex;
@@ -22,7 +22,7 @@ body{
     flex-direction: column;
     align-items: center;
     padding: 20px;
-
+    border-radius: 5px;
 }
 .request{
     display: flex;
@@ -59,6 +59,55 @@ body{
     color:white;
     border:none;
     border-radius: 5px;
-    border:2px solid #ddd;
+    width: 100px;
+    cursor: pointer;   
 }
 
+#headers-editor{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+.req-config{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+
+.header-row{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+.header-row input{
+    padding:10px;
+    border-radius: 5px;
+    border:none;
+}
+
+#add-header{
+    background-color: rgb(255, 55, 55);
+    padding:10px;
+    color:white;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.body-editor{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+.body-editor textarea{
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+textarea:focus{
+    outline: none;
+}
