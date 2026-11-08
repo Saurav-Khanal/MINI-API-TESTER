@@ -5,6 +5,7 @@
 }
 
 body{
+    padding: 20px;
     display: flex;
     min-height: 100vh;
     align-items: center;
@@ -14,7 +15,7 @@ body{
 }
 
 .container{
-    height: 600px;
+    height: auto;
     width: 500px;
     background-color: rgb(84, 85, 85);
     display: flex;
@@ -110,4 +111,12 @@ body{
 
 textarea:focus{
     outline: none;
+}
+
+.response{
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 15px;
 }
