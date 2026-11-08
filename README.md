@@ -54,7 +54,7 @@ https://jsonplaceholder.typicode.com
 | PATCH | `/posts/1` |
 | DELETE | `/posts/1` |
 
-For POST, PUT and PATCH, use this header:
+For POST, PUT and PATCH, use the following header and JSON body:
 
 ```json
 {
