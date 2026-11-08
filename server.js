@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const app = express();
 app.use(express.json());
@@ -5,8 +6,8 @@ app.listen(3000, () => {
   console.log("Api is running on local host 3000");
 });
 app.use(express.static("public"));
-app.get("/health", (req, res) => {
-  res.send("Hey your backend is running yooo!!");
+app.get("/", (req, res) => {
+   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.post("/api/test", async (req, res) => {
