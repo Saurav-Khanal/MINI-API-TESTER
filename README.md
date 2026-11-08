@@ -37,6 +37,42 @@ it helps user to send request to APIS using different HTTP methods and see the r
 4. Node js
 5. Express js
 
+## How to Test
+
+Use this free API to test the project:
+
+**Base URL:**
+```text
+https://jsonplaceholder.typicode.com
+```
+
+| Method | Endpoint |
+|---|---|
+| GET | `/posts/1` |
+| POST | `/posts` |
+| PUT | `/posts/1` |
+| PATCH | `/posts/1` |
+| DELETE | `/posts/1` |
+
+For POST, PUT and PATCH, use this header:
+
+```json
+{
+  "Content-Type": "application/json"
+}
+```
+
+**Sample JSON Body:**
+
+```json
+{
+  "title": "Testing Mini API Tester",
+  "body": "Testing API requests",
+  "userId": 1
+}
+```
+
+
 ## Deployment
 1. Clone the repository:
 ```sh
