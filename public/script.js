@@ -46,7 +46,7 @@ sendBtn.addEventListener("click", () => {
   };
   console.log(urlValue);
   console.log(requestConfig);
-  fetch("http://localhost:3000/api/test", {
+  fetch("/api/test", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
