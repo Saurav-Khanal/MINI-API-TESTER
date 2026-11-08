@@ -1,7 +1,8 @@
+
 const addHeader = document.querySelector("#add-header");
 const headersEditor = document.querySelector("#headers-editor");
 let sendBtn = document.querySelector("#send");
-let textArea=document.querySelector("#request-body");
+let textArea = document.querySelector("#request-body");
 addHeader.addEventListener("click", () => {
   let div = document.createElement("div");
   div.className = "header-row";
@@ -27,16 +28,27 @@ sendBtn.addEventListener("click", () => {
       headers[key] = value;
     }
   }
-  let textAreaValue=textArea.value;
-  let textAreaObject=textAreaValue.trim()?JSON.parse(textAreaValue):{};
-  let selectValue=document.querySelector("#drop-down").value;
-  let urlValue=document.querySelector("#request-url").value.trim();
-  let requestConfig={
-    method:selectValue,
-    url:urlValue,
-    headers:headers,
-    body:textAreaObject
-  }
+  let textAreaValue = textArea.value;
+  let textAreaObject = textAreaValue.trim() ? JSON.parse(textAreaValue) : {};
+  let selectValue = document.querySelector("#drop-down").value;
+  let urlValue = document.querySelector("#request-url").value.trim();
+  let requestConfig = {
+    method: selectValue,
+    url: urlValue,
+    headers: headers,
+    body: textAreaObject,
+  };
   console.log(urlValue);
   console.log(requestConfig);
+  fetch("http://localhost:3000/api/test", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body:JSON.stringify(requestConfig),
+  }).then((response)=>{
+   return response.json();
+  }).then((data)=>{
+    console.log(data);
+  })
 });
